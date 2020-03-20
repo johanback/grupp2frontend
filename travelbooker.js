@@ -1,9 +1,29 @@
+
+function start(){
+    addDestinations();
+    setDefaultDates();
+
+}
+
 function book(){
     let start = document.getElementById("startdate").value
     let end = document.getElementById("enddate").value
     let fromLocation = document.getElementById("fromLocation").value
     let toLocation = document.getElementById("toLocation").value
     document.getElementById("confirmation").innerHTML = `You have booked from ${fromLocation} to ${toLocation} on ${start}, with a return trip on ${end}`
+}
+
+function setDefaultDates(){
+
+    let date = new Date();
+
+    let dateFormatted = date.getFullYear() + "-0" + (date.getMonth()+1) + "-" + date.getDate();
+
+    document.getElementById('startdate').value = dateFormatted;
+
+    let dateFormatted2 = date.getFullYear() + "-0" + (date.getMonth()+1) + "-" + (date.getDate()+1);
+
+    document.getElementById('enddate').value = dateFormatted2;
 }
 
 function addDestinations(){
