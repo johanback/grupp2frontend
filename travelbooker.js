@@ -27,17 +27,22 @@ function confirmBooking() {
     let fromLocation = document.getElementById("fromLocation").value
     let toLocation = document.getElementById("toLocation").value
     if (fromLocation === toLocation) {
-        alert("That's an awfully short journey dude")
+        document.getElementById("fromLocation").classList.add("errorField");
+        document.getElementById("toLocation").classList.add("errorField");
+        alert("That's an awfully short journey dude");
         return;
     }
+    clearErrors();
     let start = document.getElementById("startdate").value
     let end = document.getElementById("enddate").value
     let outJourney = new Date(start);
     let returnJourney = new Date(end);
-    if (outJourney > returnJourney) {
+    if (outJourney > returnJourney && travelType === "round") {
+        document.getElementById("enddate").classList.add("errorField");
         alert("You can not time travel");
         return;
     }
+    clearErrors();
     let extrasList = [];
     if (document.getElementById('food').checked === true){
         extrasList.push(document.getElementById('foodLabel').innerHTML)
@@ -62,6 +67,13 @@ function confirmBooking() {
     } else if (journey.type ==="round"){
 
         document.getElementById("confirmation").innerHTML = `You have booked a ${journey.type} trip from ${journey.from} to ${journey.to} on ${journey.out}, with a return trip on ${journey.return}.<br> You have booked the following extras: ${journey.extras}.`
+    }
+}
+
+function clearErrors(){
+    let arr = document.querySelectorAll(".errorField");
+    for(x of arr){
+        x.classList.remove("errorField");
     }
 }
 

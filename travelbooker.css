@@ -19,3 +19,17 @@ input[type=date]{
     width: 100%;
     margin-bottom: 1em;
 }
+
+.confirmationdisplay {
+    margin-top: 30px;
+    font-size: 1.3em;
+
+}
+
+.form-group label {
+    font-size: 1.3em;
+}
+
+#extras label{
+    margin-left: 5px;
+}
