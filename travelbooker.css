@@ -1,10 +1,6 @@
 body {
     margin: 30px;
-}
-
-.to {
-    margin-left: 50px;
-    margin-right: 50px;
+    background-color: white;
 }
 
 .row{
@@ -13,4 +9,13 @@ body {
 
 .extrasfirst {
     margin-top: 1em;
+}
+
+.errorField {
+    border: 2px solid red;
+}
+
+input[type=date]{
+    width: 100%;
+    margin-bottom: 1em;
 }

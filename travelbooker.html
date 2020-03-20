@@ -17,22 +17,22 @@
 <body onload="start()">
   <container>
     <div class="btn-group btn-group-toggle" data-toggle="buttons" onchange="travelType()">
-      <label class="btn btn-secondary active">
+      <label class="btn btn-success active">
         <input type="radio" name="options" id="oneway" autocomplete="off" checked> One way
       </label>
-      <label class="btn btn-secondary">
+      <label class="btn btn-success">
         <input type="radio" name="options" id="roundtrip" autocomplete="off"> Round trip
       </label>
     </div>
     <div class="row">
-      <div class="col-3">
+      <div class="col-2">
         <div class="form-group">
           <label for="exampleFormControlSelect1">From</label>
           <select class="form-control locations" id="fromLocation">
           </select>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-2">
         <div class="form-group">
           <label for="exampleFormControlSelect1">To</label>
           <select class="form-control locations" id="toLocation">
@@ -41,31 +41,24 @@
       </div>
     </div>
     <div class="row">
-      <div class="col">
+      <div class="col-2">
         <input type="date" id="startdate">
-        <span class="to">TO</span>
+      </div>
+      <div class="col-2">
         <input type="date" id="enddate">
       </div>
     </div>
-    <div class="row extrasfirst">
-      <div class="col">
-        <input type="checkbox" value="food" id="food">
-        <label for="food">Food on board</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <input type="checkbox" value="quiet" id="quiet">
-        <label for="food">Quiet carriage</label>
-      </div>
+    <div id="extras">
     </div>
     </div>
     <div class="row">
       <div class="col">
-        <button onclick="book()">Book Travel</button>
+        <button onclick="confirmBooking()">Book Travel</button>
         <div class="confirmationdisplay" id="confirmation"></div>
       </div>
     </div>
+
+
 
   </container>
 
