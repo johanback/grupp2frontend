@@ -2,14 +2,15 @@ body {
     margin: 30px;
 }
 
-#confirmation{
-}
-
 .to {
     margin-left: 50px;
     margin-right: 50px;
 }
 
 .row{
-    margin-bottom: 1em;
+    margin-bottom: 0em;
+}
+
+.extrasfirst {
+    margin-top: 1em;
 }
