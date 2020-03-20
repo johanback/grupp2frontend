@@ -15,6 +15,14 @@
 </head>
 <body onload="start()">
 <container>
+  <div class="btn-group btn-group-toggle" data-toggle="buttons" onchange="travelType()">
+    <label class="btn btn-secondary active">
+      <input type="radio" name="options" id="oneway" autocomplete="off" checked> One way
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="roundtrip" autocomplete="off"> Round trip
+    </label>
+  </div>
   <div class="row">
     <div class="col-3">
       <div class="form-group">
@@ -33,7 +41,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <input type="date" id="startdate" >
+      <input type="date" id="startdate">
       <span class="to">TO</span>
       <input type="date" id="enddate">
     </div>

@@ -2,7 +2,18 @@
 function start(){
     addDestinations();
     setDefaultDates();
+    travelType();
+}
 
+function travelType(){
+    let oneway = document.getElementById("oneway").checked;
+    let roundtrip = document.getElementById("roundtrip").checked;
+
+    if (oneway){
+        document.getElementById("enddate").setAttribute("disabled", "disabled");
+    } else {
+        document.getElementById("enddate").removeAttribute("disabled", "disabled")
+    }
 }
 
 function book(){
@@ -16,14 +27,12 @@ function book(){
 function setDefaultDates(){
 
     let date = new Date();
-
     let dateFormatted = date.getFullYear() + "-0" + (date.getMonth()+1) + "-" + date.getDate();
-
     document.getElementById('startdate').value = dateFormatted;
-
+    document.getElementById('startdate').setAttribute('min', dateFormatted)
     let dateFormatted2 = date.getFullYear() + "-0" + (date.getMonth()+1) + "-" + (date.getDate()+1);
-
     document.getElementById('enddate').value = dateFormatted2;
+    document.getElementById('enddate').setAttribute('min', dateFormatted)
 }
 
 function addDestinations(){
